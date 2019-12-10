@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weeia Employee</title>
+
+    <script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+
+</head>
+<body>
+
+<div >
+
+    <h3 >
+        <span th:text="'Wynik z wyszukiwania: ' + ${findInputEmployee.getName()}"></span>
+    </h3>
+
+    <div>
+        <div  th:each="employee : ${employees}">
+            <div >
+                <div th:text="(${employee.getTitle()} ? ${employee.getTitle()} + ' ' : '') + ${employee.getName()}"></div>
+                <div  th:text="${employee.getWorkingPlace()}"></div>
+            </div>
+            <a  th:href="@{'/person/' + ${employee.toString()}}">
+                <button>Create file</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

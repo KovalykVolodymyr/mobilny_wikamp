@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weeia Employee</title>
+    <script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+
+
+</head>
+<body>
+
+<div >
+
+    <div >
+        <h3 th:text="'Podaj imie lub nazwisko prowadzącego'">
+
+        </h3>
+    </div>
+
+    <div>
+        <form  action="#" th:action="@{/person}" th:object="${findEmployee}" method="post">
+            <input  type="text" th:field="*{name}" />
+            <input type="submit" th:value="Find"/>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
